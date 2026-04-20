@@ -136,7 +136,7 @@ var data = [
   // G42 2系列 Coupe
   {s:"2",y:"正2026",pd:"01-03/2026生產",m:"220i Coupe M Sport",p:2120000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
   {s:"2",y:"25/26",pd:"08-12/2025生產",m:"220i Coupe M Sport",p:2120000,f:"120/48",ins:1,mnt:0,ext:0,n:""},
-  {s:"2",y:"25/26",pd:"08-12/2025生產",m:"220i Coupe M Sport",p:2120000,f:"120/48",ins:1,mnt:1,ext:0,n:""},
+  {s:"2",y:"正2025",pd:"01-07/2025生產",m:"220i Coupe M Sport",p:2120000,f:"120/48",ins:1,mnt:1,ext:0,n:""},
   {s:"2",y:"正2025",pd:"01-07/2025生產",m:"M240i xDrive Coupe",p:3060000,f:"120/48",ins:1,mnt:1,ext:0,n:"限時免費升級M Performance碳纖維套件，約NT$220,000"},
   // G20 3系列
   {s:"3",y:"正2026",pd:"01-07/2026生產",m:"318i M Sport",p:2270000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
@@ -271,7 +271,7 @@ var data = [
   // G07 X7
   {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X7 xDrive40i",p:5290000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
   {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5430000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i",p:5430000,f:"200/60",ins:1,mnt:0,ext:1,n:""},
+  {s:"X",y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i",p:5290000,f:"200/60",ins:1,mnt:0,ext:1,n:""},
   {s:"X",y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5430000,f:"200/60",ins:1,mnt:0,ext:1,n:""},
   {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X7 xDrive40i",p:5100000,f:"300/60",ins:1,mnt:1,ext:1,n:"建議售價5,290,000"},
   {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5220000,f:"300/60",ins:1,mnt:1,ext:1,n:"建議售價5,430,000"},
@@ -338,7 +338,7 @@ function render() {
       '<td><span class="yp">'+r.y+'</span><span class="prod">('+r.pd+')</span></td>' +
       '<td class="car-name">'+r.m+'</td>' +
       '<td class="price">NT$'+r.p.toLocaleString()+'</td>' +
-      '<td class="fin">'+r.f+'</td>' +
+      '<td class="fin">'+(r.f === '--' ? '--' : r.f.replace(/(\d+)\/(\d+)/, '$1萬/$2期'))+'</td>' +
       '<td class="center">'+(r.ins?'<span class="chk">✓</span>':'<span class="dash">–</span>')+'</td>' +
       '<td class="center">'+(r.mnt?'<span class="chk">✓</span>':'<span class="dash">–</span>')+'</td>' +
       '<td class="center">'+(r.ext?'<span class="chk">✓</span>':'<span class="dash">–</span>')+'</td>';

@@ -9,18 +9,15 @@
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{--bg:#ffffff;--surface:#f5f5f5;--surface2:#eeeeee;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.15);--text:#111111;--text2:#555555;--text3:#999999;--blue:#1b6fff;--gold:#a07820}
   body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;min-height:100vh}
-  header{border-bottom:1px solid var(--border);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);z-index:100}
-  .logo-text{font-size:14px;font-weight:500;letter-spacing:0.1em;color:var(--text)}
-  .header-tag{font-size:11px;letter-spacing:0.1em;color:var(--gold);background:rgba(160,120,32,0.08);border:1px solid rgba(160,120,32,0.25);padding:4px 12px;border-radius:2px}
-  main{max-width:1400px;margin:0 auto;padding:2rem}
-  .page-title{font-size:1.8rem;font-weight:300;letter-spacing:-0.02em;margin-bottom:0.4rem}
-  .page-sub{font-size:12px;color:var(--text3);letter-spacing:0.05em;margin-bottom:2rem}
+  header{border-bottom:1px solid var(--border);padding:1.2rem 1.5rem;position:sticky;top:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);z-index:100}
+  .logo-text{font-size:15px;font-weight:600;letter-spacing:0.08em;color:var(--text);display:block}
+  .header-sub{font-size:11px;color:var(--gold);letter-spacing:0.08em;margin-top:3px;display:block}
+  main{max-width:1200px;margin:0 auto;padding:1.5rem 1rem}
   .filter-group{margin-bottom:1rem}
   .filter-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
   .tabs{display:flex;gap:6px;flex-wrap:wrap}
   .tab{padding:5px 12px;border:1px solid var(--border2);border-radius:2px;background:transparent;color:var(--text2);font-size:12px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;transition:all 0.15s}
   .tab:hover{color:var(--text);border-color:rgba(0,0,0,0.3);background:var(--surface)}
-  .tab.active-s{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:500}
   .tab.active-y{background:var(--gold);border-color:var(--gold);color:#fff;font-weight:500}
   .search-wrap{position:relative;margin-bottom:1rem}
   .search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3)}
@@ -30,65 +27,41 @@
   .count{font-size:12px;color:var(--text3);margin-bottom:0.8rem}
   .count span{color:var(--blue);font-weight:500}
   .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:4px}
-  table{width:100%;border-collapse:collapse;font-size:13px;min-width:800px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
   thead tr{border-bottom:1px solid var(--border2)}
-  th{padding:10px 14px;text-align:left;font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);white-space:nowrap;background:var(--surface)}
+  th{padding:10px 12px;text-align:left;font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);white-space:nowrap;background:var(--surface)}
   th.center{text-align:center}
   tbody tr{border-bottom:1px solid var(--border);transition:background 0.1s}
   tbody tr:last-child{border-bottom:none}
   tbody tr:hover{background:var(--surface2)}
-  td{padding:10px 14px;vertical-align:middle;color:var(--text)}
+  td{padding:10px 12px;vertical-align:middle;color:var(--text)}
   td.center{text-align:center}
-  .sp{display:inline-block;padding:2px 7px;border-radius:2px;font-size:10px;font-weight:500;letter-spacing:0.08em}
-  .p1{background:rgba(27,111,255,0.1);color:#1b6fff}
-  .p2{background:rgba(0,160,130,0.1);color:#008c72}
-  .p3{background:rgba(160,120,32,0.1);color:#a07820}
-  .p4{background:rgba(220,80,40,0.1);color:#dc5028}
-  .p5{background:rgba(100,60,200,0.1);color:#6433c8}
-  .p7{background:rgba(140,100,20,0.12);color:#8c6414}
-  .pX{background:rgba(30,150,80,0.1);color:#1e9650}
-  .pM{background:rgba(200,30,30,0.1);color:#c01e1e}
-  .pi{background:rgba(0,140,200,0.1);color:#008cc8}
   .yp{display:inline-block;padding:2px 7px;border-radius:2px;font-size:11px;font-weight:500;background:rgba(160,120,32,0.08);color:var(--gold);white-space:nowrap}
   .prod{display:block;font-size:10px;color:var(--text3);margin-top:3px;white-space:nowrap}
-  .car-name{font-weight:400}
-  .price{font-weight:500;white-space:nowrap}
-  .fin{color:var(--blue);font-size:12px}
+  .car-name{font-weight:500;font-size:13px;line-height:1.4}
+  .car-price{font-size:12px;color:var(--text2);margin-top:3px;font-weight:400}
+  .fin{color:var(--blue);font-size:12px;white-space:nowrap}
   .chk{color:#1a9640;font-size:15px}
   .dash{color:#ccc}
-  .note{font-size:11px;color:var(--text2);max-width:200px;line-height:1.5}
   footer{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:3rem;font-size:11px;color:var(--text3)}
-  @media(max-width:640px){header{padding:1rem 1.2rem}main{padding:1rem 1.2rem}.page-title{font-size:1.3rem}}
+  @media(max-width:640px){
+    main{padding:1rem 0.75rem}
+    th,td{padding:8px 10px}
+    .fin{font-size:11px}
+  }
 </style>
 </head>
 <body>
 <header>
   <span class="logo-text">BMW 台北鎔德</span>
-  <span class="header-tag">2026 / 4月優惠</span>
+  <span class="header-sub">2026 / 4月優惠</span>
 </header>
 <main>
-  <h1 class="page-title">車型售價查詢</h1>
-  <p class="page-sub">BMW TAIWAN · APRIL 2026 · ALL MODELS &amp; PRICING</p>
-  <div class="filter-group">
-    <div class="filter-label">系列</div>
-    <div class="tabs" id="stabs">
-      <button class="tab active-s" data-s="">全部</button>
-      <button class="tab" data-s="1">1系列</button>
-      <button class="tab" data-s="2">2系列</button>
-      <button class="tab" data-s="3">3系列</button>
-      <button class="tab" data-s="4">4系列</button>
-      <button class="tab" data-s="5">5系列</button>
-      <button class="tab" data-s="7">7系列</button>
-      <button class="tab" data-s="X">X系列</button>
-      <button class="tab" data-s="M">M系列</button>
-      <button class="tab" data-s="i">電動車</button>
-    </div>
-  </div>
   <div class="filter-group">
     <div class="filter-label">年式</div>
     <div class="tabs" id="ytabs">
-      <button class="tab active-y" data-y="">全部</button>
-      <button class="tab" data-y="正2026">正2026</button>
+      <button class="tab" data-y="">全部</button>
+      <button class="tab active-y" data-y="正2026">正2026</button>
       <button class="tab" data-y="25/26">25/26</button>
       <button class="tab" data-y="正2025">正2025</button>
       <button class="tab" data-y="24/25">24/25</button>
@@ -103,7 +76,7 @@
     <table>
       <thead>
         <tr>
-          <th>系列</th><th>年式</th><th>車型</th><th>建議售價</th><th>0利率分期專案</th><th class="center">1年乙式全險</th><th class="center">3年/4萬公里保養套裝</th><th class="center">第四年延長保固</th>
+          <th>年式</th><th>車型 / 建議售價</th><th>0利率分期專案</th><th class="center">1年乙式全險</th><th class="center">3年/4萬公里保養套裝</th><th class="center">第四年延長保固</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -304,16 +277,7 @@ var data = [
   {s:"i",y:"正2026",pd:"01-06/2026生產",m:"iX xDrive60 M Sport",p:4880000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
   {s:"i",y:"25/26",pd:"03-12/2025生產",m:"iX xDrive45 M Sport",p:3680000,f:"120/48",ins:0,mnt:0,ext:0,n:""}
 ];
-var pc = {"1":"p1","2":"p2","3":"p3","4":"p4","5":"p5","7":"p7","X":"pX","M":"pM","i":"pi"};
-var sl = {"1":"1系列","2":"2系列","3":"3系列","4":"4系列","5":"5系列","7":"7系列","X":"X系列","M":"M","i":"電動車"};
-var curS = "", curY = "";
-document.getElementById('stabs').addEventListener('click', function(e) {
-  if (!e.target.classList.contains('tab')) return;
-  document.querySelectorAll('#stabs .tab').forEach(function(t){t.classList.remove('active-s')});
-  e.target.classList.add('active-s');
-  curS = e.target.getAttribute('data-s');
-  render();
-});
+var curY = "正2026";
 document.getElementById('ytabs').addEventListener('click', function(e) {
   if (!e.target.classList.contains('tab')) return;
   document.querySelectorAll('#ytabs .tab').forEach(function(t){t.classList.remove('active-y')});
@@ -327,17 +291,13 @@ function render() {
   tbody.innerHTML = '';
   var count = 0;
   data.forEach(function(r) {
-    if (curS && r.s !== curS) return;
     if (curY && r.y !== curY) return;
     if (q && r.m.toLowerCase().indexOf(q) === -1) return;
     count++;
     var tr = document.createElement('tr');
-    var pclass = pc[r.s] || '';
     tr.innerHTML =
-      '<td><span class="sp '+pclass+'">'+(sl[r.s]||r.s)+'</span></td>' +
       '<td><span class="yp">'+r.y+'</span><span class="prod">('+r.pd+')</span></td>' +
-      '<td class="car-name">'+r.m+'</td>' +
-      '<td class="price">NT$'+r.p.toLocaleString()+'</td>' +
+      '<td><div class="car-name">'+r.m+'</div><div class="car-price">NT$'+r.p.toLocaleString()+'</div></td>' +
       '<td class="fin">'+(r.f === '--' ? '--' : r.f.replace(/(\d+)\/(\d+)/, '$1萬/$2期'))+'</td>' +
       '<td class="center">'+(r.ins?'<span class="chk">✓</span>':'<span class="dash">–</span>')+'</td>' +
       '<td class="center">'+(r.mnt?'<span class="chk">✓</span>':'<span class="dash">–</span>')+'</td>' +

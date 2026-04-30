@@ -303,7 +303,7 @@ function render() {
     count++;
     var tr = document.createElement('tr');
     var msg = encodeURIComponent('我想詢問 ' + r.m + ' 現金折扣');
-    var lineUrl = 'https://line.me/R/oaMessage/%40pee4870s/?' + msg;
+    var lineUrl = 'https://line.me/R/ti/p/%40pee4870s?text=' + msg;
     tr.innerHTML =
       '<td><span class="yp">'+r.y+'</span><span class="prod">('+r.pd+')</span></td>' +
       '<td><div class="car-name">'+r.m+'</div><div class="car-price">NT$'+r.p.toLocaleString()+'</div><a class="ask-btn" href="'+lineUrl+'" target="_blank">💬 了解現金折扣</a></td>' +

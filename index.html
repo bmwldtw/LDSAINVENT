@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMW 車價查詢 2026年4月</title>
+<title>BMW 車價查詢 2026年5月</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -43,8 +43,6 @@
   .car-name{font-weight:500;font-size:13px;line-height:1.4}
   .car-price{font-size:12px;color:var(--text2);margin-top:3px;font-weight:400}
   .fin{color:var(--blue);font-size:12px;white-space:nowrap}
-  .chk{color:#1a9640;font-size:15px;font-weight:500}
-  .dash{color:#ccc}
   .gift-btn{display:inline-block;padding:4px 12px;background:var(--blue);color:#fff;border-radius:4px;font-size:12px;font-weight:500;border:none;cursor:pointer;font-family:'Noto Sans TC',sans-serif;white-space:nowrap}
   .gift-btn:hover{background:#1459d4}
   .gift-btn.no-gift{background:var(--surface2);color:var(--text3);cursor:default}
@@ -63,13 +61,14 @@
   .modal-val.no{color:#ccc}
   .modal-close{margin-top:1.2rem;width:100%;padding:10px;background:var(--surface);border:none;border-radius:6px;font-size:13px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;color:var(--text2)}
   .modal-close:hover{background:var(--surface2)}
+  footer{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:3rem;font-size:11px;color:var(--text3)}
   @media(max-width:640px){main{padding:1rem 0.75rem}th,td{padding:8px 10px}.fin{font-size:11px}}
 </style>
 </head>
 <body>
 <header>
   <span class="logo-text">BMW 台北鎔德</span>
-  <span class="header-sub">2026 / 4月優惠</span>
+  <span class="header-sub">2026 / 5月優惠</span>
 </header>
 <a class="promo-banner" href="https://survey.bmw.com.tw/s/LNGxK" target="_blank">
   🎁 試駕即贈專屬好禮　立即預約 →
@@ -101,8 +100,7 @@
     </table>
   </div>
 </main>
-<footer>資料來源：BMW Taiwan 2026年4月銷售辦法 · 售價及優惠以實際成交為準</footer>
-
+<footer>資料來源：BMW Taiwan 2026年5月銷售辦法 · 售價及優惠以實際成交為準</footer>
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
   <div class="modal">
     <div class="modal-title" id="modalTitle"></div>
@@ -127,196 +125,156 @@
 </div>
 <script>
 var data = [
-  // F70 1系列
-  {s:"1",y:"正2026",pd:"01-06/2026生產",m:"120 Sport",p:1570000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"1",y:"正2026",pd:"01-06/2026生產",m:"120 M Sport",p:1850000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"1",y:"正2026",pd:"01-06/2026生產",m:"M135 xDrive",p:2700000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"1",y:"25/26",pd:"07-12/2025生產",m:"120 Sport",p:1570000,f:"120/48",ins:0,mnt:1,ext:1,n:""},
-  {s:"1",y:"25/26",pd:"07-12/2025生產",m:"120 M Sport",p:1850000,f:"120/48",ins:0,mnt:1,ext:1,n:""},
-  {s:"1",y:"25/26",pd:"07-12/2025生產",m:"M135 xDrive",p:2700000,f:"120/48",ins:0,mnt:1,ext:1,n:""},
-  {s:"1",y:"25/26",pd:"03-06/2025生產",m:"120 Sport",p:1550000,f:"120/48",ins:0,mnt:1,ext:1,n:""},
-  {s:"1",y:"25/26",pd:"03-06/2025生產",m:"120 M Sport",p:1830000,f:"120/48",ins:0,mnt:1,ext:1,n:""},
-  {s:"1",y:"25/26",pd:"03-06/2025生產",m:"M135 xDrive",p:2680000,f:"120/48",ins:0,mnt:1,ext:1,n:""},
-  {s:"1",y:"正2025",pd:"01-02/2025生產",m:"120 M Sport",p:1830000,f:"120/48",ins:0,mnt:1,ext:1,n:""},
-  // F74 2系列 Active Tourer (220/M235)
-  {s:"2",y:"正2026",pd:"01-06/2026生產",m:"220 M Racing Edition",p:1900000,f:"120/48",ins:0,mnt:0,ext:0,n:"可選配M雙前座跑車座椅，優惠價NT$30,000"},
-  {s:"2",y:"正2026",pd:"01-06/2026生產",m:"M235 xDrive Racing Edition",p:2750000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"2",y:"25/26",pd:"07-12/2025生產",m:"220 M Racing Edition",p:1890000,f:"120/48",ins:0,mnt:1,ext:0,n:"可選配M雙前座跑車座椅，優惠價NT$30,000"},
-  {s:"2",y:"25/26",pd:"07-12/2025生產",m:"M235 xDrive Racing Edition",p:2730000,f:"120/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"2",y:"25/26",pd:"03-06/2025生產",m:"M235 xDrive Racing Edition",p:2730000,f:"120/48",ins:0,mnt:1,ext:0,n:""},
-  // U06 2系列 Active Tourer (218i)
-  {s:"2",y:"正2026",pd:"01-06/2026生產",m:"218i Active Tourer Luxe 豪華版",p:1590000,f:"120/48",ins:0,mnt:0,ext:0,n:"升級雙前座電動腰靠+harman/kardon，價值NT$74,000"},
-  {s:"2",y:"25/26",pd:"07-10/2025生產",m:"218i Active Tourer Luxury 限量版",p:1570000,f:"120/48",ins:0,mnt:1,ext:0,n:""},
-  // G42 2系列 Coupe
-  {s:"2",y:"正2026",pd:"01-03/2026生產",m:"220i Coupe M Sport",p:2120000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"2",y:"25/26",pd:"08-12/2025生產",m:"220i Coupe M Sport",p:2120000,f:"120/48",ins:1,mnt:0,ext:0,n:""},
-  {s:"2",y:"正2025",pd:"01-07/2025生產",m:"220i Coupe M Sport",p:2120000,f:"120/48",ins:1,mnt:1,ext:0,n:""},
-  {s:"2",y:"正2025",pd:"01-07/2025生產",m:"M240i xDrive Coupe",p:3060000,f:"120/48",ins:1,mnt:1,ext:0,n:"限時免費升級M Performance碳纖維套件，約NT$220,000"},
-  // G20 3系列
-  {s:"3",y:"正2026",pd:"01-07/2026生產",m:"318i M Sport",p:2270000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"3",y:"正2026",pd:"01-07/2026生產",m:"320i M Sport",p:2490000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"3",y:"正2026",pd:"01-07/2026生產",m:"330i M Sport",p:2990000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"3",y:"25/26",pd:"08-12/2025生產",m:"318i M Sport",p:2270000,f:"120/48",ins:1,mnt:0,ext:0,n:""},
-  {s:"3",y:"25/26",pd:"08-12/2025生產",m:"320i M Sport",p:2490000,f:"180/48",ins:1,mnt:0,ext:0,n:""},
-  {s:"3",y:"25/26",pd:"08-12/2025生產",m:"330i M Sport",p:2990000,f:"180/48",ins:1,mnt:0,ext:0,n:""},
-  {s:"3",y:"正2025",pd:"01-07/2025生產",m:"318i Sport",p:2190000,f:"200/48",ins:1,mnt:1,ext:1,n:""},
-  {s:"3",y:"正2025",pd:"01-07/2025生產",m:"320i M Sport",p:2490000,f:"200/60",ins:1,mnt:1,ext:1,n:""},
-  {s:"3",y:"正2025",pd:"01-07/2025生產",m:"330i M Sport",p:2990000,f:"250/60",ins:1,mnt:1,ext:1,n:""},
-  {s:"3",y:"正2025",pd:"01-07/2025生產",m:"M340i xDrive",p:3680000,f:"320/60",ins:1,mnt:1,ext:1,n:""},
-  {s:"3",y:"24/25",pd:"08-12/2024生產",m:"M340i xDrive",p:3680000,f:"320/60",ins:1,mnt:1,ext:1,n:""},
-  // G21 3系列 Touring
-  {s:"3",y:"正2026",pd:"01-06/2026生產",m:"320i Touring M Racing Edition",p:2640000,f:"120/48",ins:0,mnt:0,ext:0,n:"升級M跑車化電子懸吊"},
-  {s:"3",y:"正2026",pd:"01-06/2026生產",m:"330i Touring M Sport",p:3060000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"3",y:"正2026",pd:"01-06/2026生產",m:"M340i xDrive Touring",p:3750000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"3",y:"25/26",pd:"07-10/2025生產",m:"330i Touring M Sport",p:3060000,f:"120/48",ins:0,mnt:1,ext:0,n:""},
-  // G22 4系列 Coupe
-  {s:"4",y:"正2026",pd:"01-06/2026生產",m:"420i Coupe M Racing Edition",p:2690000,f:"80/48",ins:0,mnt:0,ext:0,n:"升級M Sport進階套件+智慧LED頭燈，價值NT$179,000"},
-  {s:"4",y:"正2026",pd:"01-06/2026生產",m:"430i Coupe M Racing Edition",p:3220000,f:"80/48",ins:0,mnt:0,ext:0,n:"升級M Sport進階套件+Vernasca真皮，價值NT$170,000"},
-  {s:"4",y:"正2026",pd:"01-06/2026生產",m:"M440i xDrive Coupe",p:3880000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"4",y:"25/26",pd:"07-10/2025生產",m:"420i Coupe M Sport",p:2610000,f:"80/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"4",y:"25/26",pd:"07-10/2025生產",m:"430i Coupe M Sport",p:3140000,f:"80/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"4",y:"25/26",pd:"07-10/2025生產",m:"M440i xDrive Coupe",p:3880000,f:"80/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"4",y:"正2025",pd:"01-06/2025生產",m:"430i Coupe M Sport",p:3140000,f:"120/48",ins:1,mnt:1,ext:0,n:""},
-  {s:"4",y:"正2025",pd:"01-06/2025生產",m:"M440i xDrive Coupe",p:3880000,f:"120/48",ins:1,mnt:1,ext:0,n:""},
-  {s:"4",y:"24/25",pd:"03-10/2024生產",m:"430i Coupe M Sport",p:3140000,f:"120/48",ins:1,mnt:1,ext:0,n:""},
-  // G23 4系列 Convertible
-  {s:"4",y:"正2026",pd:"01-06/2026生產",m:"430i xDrive Convertible M Sport",p:3550000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"4",y:"25/26",pd:"07-10/2025生產",m:"430i xDrive Convertible M Sport",p:3550000,f:"80/48",ins:0,mnt:0,ext:0,n:"升級xDrive四輪傳動+雙前座加熱通風座椅"},
-  // G26 4系列 Gran Coupe
-  {s:"4",y:"正2026",pd:"01-06/2026生產",m:"420i Gran Coupe M Racing Edition",p:2710000,f:"80/48",ins:0,mnt:0,ext:0,n:"升級M Sport進階套件+智慧LED頭燈，價值NT$179,000"},
-  {s:"4",y:"正2026",pd:"01-06/2026生產",m:"430i Gran Coupe M Racing Edition",p:3240000,f:"80/48",ins:0,mnt:0,ext:0,n:"升級M Sport進階套件+Vernasca真皮，價值NT$170,000"},
-  {s:"4",y:"25/26",pd:"07-10/2025生產",m:"420i Gran Coupe M Sport",p:2630000,f:"180/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"4",y:"25/26",pd:"07-10/2025生產",m:"430i Gran Coupe M Sport",p:3160000,f:"180/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"4",y:"24/25",pd:"03-10/2024生產",m:"420i Gran Coupe M Sport",p:2630000,f:"200/60",ins:1,mnt:1,ext:1,n:""},
-  // G26 BEV i4
-  {s:"i",y:"正2026",pd:"01-06/2026生產",m:"i4 eDrive40",p:2790000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"i",y:"正2026",pd:"01-06/2026生產",m:"i4 M60 xDrive",p:3330000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"i",y:"25/26",pd:"07-12/2025生產",m:"i4 eDrive40",p:2790000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"i",y:"25/26",pd:"07-12/2025生產",m:"i4 M60 xDrive",p:3330000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"i",y:"正2025",pd:"01-06/2025生產",m:"i4 eDrive40",p:2750000,f:"120/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"i",y:"24/25",pd:"07-12/2024生產",m:"i4 eDrive40",p:2750000,f:"180/48",ins:1,mnt:1,ext:0,n:"贈1年全險或2年U-POWER免費充電"},
-  // G60 5系列
-  {s:"5",y:"正2026",pd:"01-06/2026生產",m:"520i M Sport",p:2990000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"5",y:"正2026",pd:"01-06/2026生產",m:"530i M Sport",p:3390000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"5",y:"25/26",pd:"07-12/2025生產",m:"520i M Sport",p:2990000,f:"180/48",ins:1,mnt:0,ext:0,n:"升級飾光水箱護罩+通風座椅+B&W音響，價值NT$144,000"},
-  {s:"5",y:"25/26",pd:"07-12/2025生產",m:"530i M Sport",p:3390000,f:"180/48",ins:1,mnt:1,ext:0,n:""},
-  {s:"5",y:"正2025",pd:"01-06/2025生產",m:"520i M Sport",p:2960000,f:"180/48",ins:1,mnt:1,ext:1,n:""},
-  {s:"5",y:"正2025",pd:"01-06/2025生產",m:"530i M Sport",p:3390000,f:"180/48",ins:0,mnt:1,ext:1,n:""},
-  {s:"5",y:"24/25",pd:"07-12/2024生產",m:"520i M Sport",p:2960000,f:"200/48",ins:1,mnt:1,ext:1,n:""},
-  // G60 BEV i5
-  {s:"5",y:"正2026",pd:"01-06/2026生產",m:"i5 eDrive40 M Sport",p:3300000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"5",y:"正2026",pd:"01-06/2026生產",m:"i5 M60 xDrive",p:4860000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"5",y:"25/26",pd:"03-10/2025生產",m:"i5 eDrive40 M Sport",p:3290000,f:"180/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"5",y:"25/26",pd:"03-10/2025生產",m:"i5 M60 xDrive",p:4850000,f:"180/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"5",y:"24/25",pd:"07-12/2024生產",m:"i5 eDrive40 M Sport",p:3290000,f:"180/48",ins:1,mnt:1,ext:1,n:"贈1年全險或3年U-POWER免費充電"},
-  {s:"5",y:"24/25",pd:"07-12/2024生產",m:"i5 M60 xDrive",p:4850000,f:"180/48",ins:1,mnt:1,ext:1,n:"贈1年全險或3年U-POWER免費充電"},
-  // G61 5系列 Touring
-  {s:"5",y:"正2026",pd:"01-06/2026生產",m:"520i Touring M Sport",p:3090000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"5",y:"25/26",pd:"07-12/2025生產",m:"520i Touring M Sport",p:3090000,f:"120/48",ins:0,mnt:0,ext:0,n:"升級飾光水箱護罩+通風座椅+B&W音響，價值NT$144,000"},
-  {s:"5",y:"正2025",pd:"01-06/2025生產",m:"520i Touring M Sport",p:3060000,f:"180/48",ins:1,mnt:1,ext:1,n:""},
-  // G61 BEV i5 Touring
-  {s:"5",y:"正2026",pd:"01-06/2026生產",m:"i5 eDrive40 Touring M Sport",p:3400000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"5",y:"正2026",pd:"01-06/2026生產",m:"i5 M60 xDrive Touring",p:4960000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"5",y:"25/26",pd:"03-10/2025生產",m:"i5 eDrive40 Touring M Sport",p:3390000,f:"180/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"5",y:"25/26",pd:"03-10/2025生產",m:"i5 M60 xDrive Touring",p:4950000,f:"180/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"5",y:"24/25",pd:"03-12/2024生產",m:"i5 M60 xDrive Touring",p:4950000,f:"200/60",ins:1,mnt:1,ext:1,n:"贈1年全險或3年U-POWER免費充電"},
-  // G70 7系列
-  {s:"7",y:"正2026",pd:"01-06/2026生產",m:"735i Pure Excellence",p:4750000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"7",y:"正2026",pd:"01-06/2026生產",m:"735i Edition M",p:5120000,f:"120/48",ins:0,mnt:0,ext:0,n:"升級M Sport套件及BMW水晶鑲嵌頭燈，價值NT$526,000"},
-  {s:"7",y:"正2026",pd:"01-06/2026生產",m:"740i Edition M",p:6150000,f:"120/48",ins:0,mnt:0,ext:0,n:"升級M Sport套件，價值NT$370,000"},
-  {s:"7",y:"25/26",pd:"07-10/2025生產",m:"735i Pure Excellence",p:4750000,f:"120/48",ins:1,mnt:0,ext:0,n:""},
-  {s:"7",y:"25/26",pd:"07-10/2025生產",m:"735i Edition M",p:5120000,f:"120/48",ins:1,mnt:0,ext:0,n:"升級M Sport套件及BMW水晶鑲嵌頭燈，價值NT$526,000"},
-  {s:"7",y:"25/26",pd:"07-10/2025生產",m:"740i Edition M",p:6150000,f:"120/48",ins:1,mnt:0,ext:0,n:"升級M Sport套件，價值NT$370,000"},
-  {s:"7",y:"正2025",pd:"01-06/2025生產",m:"735i Luxury",p:4930000,f:"300/60",ins:1,mnt:1,ext:1,n:""},
-  {s:"7",y:"正2025",pd:"01-06/2025生產",m:"740i Luxury",p:6000000,f:"300/60",ins:1,mnt:1,ext:1,n:""},
-  {s:"7",y:"正2025",pd:"01-06/2025生產",m:"740i Excellence",p:6400000,f:"300/60",ins:1,mnt:1,ext:1,n:""},
-  {s:"7",y:"24/25",pd:"07-12/2024生產",m:"735i Luxury",p:4930000,f:"300/60",ins:1,mnt:1,ext:1,n:""},
-  // G70 BEV i7
-  {s:"7",y:"正2026",pd:"01-06/2026生產",m:"i7 eDrive50 Excellence",p:5980000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"7",y:"24/25",pd:"07-12/2024生產",m:"i7 eDrive50 Excellence",p:5980000,f:"300/60",ins:1,mnt:1,ext:1,n:"贈1年全險或3年U-POWER免費充電"},
-  // U11 X1
-  {s:"X",y:"正2026",pd:"01-06/2026生產",m:"X1 sDrive18i M Sport",p:1990000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"正2026",pd:"01-06/2026生產",m:"X1 sDrive20i M Sport",p:2200000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"07-10/2025生產",m:"X1 sDrive18i M Sport",p:1990000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"07-10/2025生產",m:"X1 sDrive20i M Sport",p:2200000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  // U11 BEV iX1
-  {s:"X",y:"正2026",pd:"01-02/2026生產",m:"iX1 eDrive20 xLine",p:2040000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"正2026",pd:"01-02/2026生產",m:"iX1 xDrive30 xLine",p:2340000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"07-12/2025生產",m:"iX1 eDrive20 xLine",p:2040000,f:"80/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"07-12/2025生產",m:"iX1 xDrive30 xLine",p:2340000,f:"80/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"X",y:"正2025",pd:"01-06/2025生產",m:"iX1 eDrive20 xLine",p:1990000,f:"120/48",ins:0,mnt:1,ext:0,n:""},
-  // U10 X2
-  {s:"X",y:"正2026",pd:"01-06/2026生產",m:"X2 sDrive20i M Sport",p:2260000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"正2026",pd:"01-06/2026生產",m:"X2 M35i xDrive",p:2890000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"07-12/2025生產",m:"X2 sDrive20i M Sport",p:2260000,f:"80/48",ins:0,mnt:1,ext:0,n:"升級harman/kardon，價值NT$44,000"},
-  {s:"X",y:"25/26",pd:"07-12/2025生產",m:"X2 M35i xDrive",p:2890000,f:"80/48",ins:0,mnt:1,ext:0,n:""},
-  {s:"X",y:"正2025",pd:"01-06/2025生產",m:"X2 sDrive20i M Sport",p:2250000,f:"200/60",ins:1,mnt:1,ext:1,n:""},
-  // U10 BEV iX2
-  {s:"X",y:"正2026",pd:"01-02/2026生產",m:"iX2 xDrive30 M Sport",p:2420000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"07-10/2025生產",m:"iX2 xDrive30 M Sport",p:2420000,f:"80/48",ins:0,mnt:1,ext:0,n:"升級harman/kardon，價值NT$44,000"},
-  {s:"X",y:"正2025",pd:"01-06/2025生產",m:"iX2 xDrive30 M Sport",p:2370000,f:"120/48",ins:0,mnt:1,ext:0,n:""},
-  // G45 X3
-  {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X3 20 xDrive xLine",p:2490000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X3 20 xDrive M Sport",p:2770000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X3 M50 xDrive",p:3830000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"08-12/2025生產",m:"X3 20 xDrive xLine",p:2490000,f:"120/48",ins:1,mnt:0,ext:1,n:""},
-  {s:"X",y:"25/26",pd:"08-12/2025生產",m:"X3 20 xDrive M Sport",p:2770000,f:"120/48",ins:1,mnt:0,ext:1,n:""},
-  {s:"X",y:"25/26",pd:"08-12/2025生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"120/48",ins:1,mnt:0,ext:1,n:""},
-  {s:"X",y:"25/26",pd:"08-12/2025生產",m:"X3 M50 xDrive",p:3830000,f:"120/48",ins:1,mnt:0,ext:1,n:""},
-  {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X3 20 xDrive xLine",p:2490000,f:"200/60",ins:1,mnt:1,ext:1,n:""},
-  {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X3 20 xDrive M Sport",p:2770000,f:"200/60",ins:1,mnt:1,ext:1,n:""},
-  {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"300/60",ins:1,mnt:1,ext:1,n:""},
-  {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X3 M50 xDrive",p:3830000,f:"300/60",ins:1,mnt:1,ext:1,n:"加贈第4、5年延長保固"},
-  // G05 X5
-  {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X5 xDrive30d M Sport 鉑金版",p:3540000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X5 xDrive40i M Sport 鉑金版",p:3990000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"08-12/2025生產",m:"X5 xDrive30d M Sport 鉑金版",p:3540000,f:"200/60",ins:1,mnt:0,ext:1,n:""},
-  {s:"X",y:"25/26",pd:"08-12/2025生產",m:"X5 xDrive40i M Sport 鉑金版",p:3990000,f:"200/60",ins:1,mnt:0,ext:1,n:""},
-  {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X5 xDrive30d xLine",p:3260000,f:"300/60",ins:1,mnt:1,ext:1,n:"建議售價3,450,000"},
-  {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X5 xDrive40i M Sport",p:3730000,f:"300/60",ins:1,mnt:1,ext:1,n:"建議售價3,920,000"},
-  {s:"X",y:"24/25",pd:"08-12/2024生產",m:"X5 xDrive40i M Sport",p:3730000,f:"300/60",ins:1,mnt:1,ext:1,n:"建議售價3,920,000"},
-  // G06 X6
-  {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X6 xDrive40i M Sport 鉑金版",p:4060000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X6 M60i xDrive",p:5650000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"08-12/2025生產",m:"X6 xDrive40i M Sport 鉑金版",p:4060000,f:"200/60",ins:1,mnt:0,ext:1,n:""},
-  {s:"X",y:"25/26",pd:"08-12/2025生產",m:"X6 M60i xDrive",p:5650000,f:"200/60",ins:1,mnt:0,ext:1,n:""},
-  {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X6 xDrive40i M Sport",p:3800000,f:"300/60",ins:1,mnt:1,ext:1,n:"建議售價3,990,000"},
-  // G07 X7
-  {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X7 xDrive40i",p:5290000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"正2026",pd:"01-07/2026生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5430000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"X",y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i",p:5290000,f:"200/60",ins:1,mnt:0,ext:1,n:""},
-  {s:"X",y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5430000,f:"200/60",ins:1,mnt:0,ext:1,n:""},
-  {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X7 xDrive40i",p:5100000,f:"300/60",ins:1,mnt:1,ext:1,n:"建議售價5,290,000"},
-  {s:"X",y:"正2025",pd:"01-07/2025生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5220000,f:"300/60",ins:1,mnt:1,ext:1,n:"建議售價5,430,000"},
-  {s:"X",y:"24/25",pd:"08-12/2024生產",m:"X7 xDrive40i",p:5100000,f:"300/60",ins:1,mnt:1,ext:1,n:"建議售價5,290,000"},
-  {s:"X",y:"24/25",pd:"08-12/2024生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5220000,f:"300/60",ins:1,mnt:1,ext:1,n:"建議售價5,430,000"},
-  // G87 M2
-  {s:"M",y:"正2026",pd:"01-07/2026生產",m:"M2 Coupe",p:3750000,f:"--",ins:0,mnt:0,ext:0,n:""},
-  {s:"M",y:"25/26",pd:"08-12/2025生產",m:"M2 Coupe",p:3750000,f:"--",ins:0,mnt:0,ext:0,n:""},
-  {s:"M",y:"正2026",pd:"01-07/2026生產",m:"M2 Coupe CS",p:5630000,f:"--",ins:0,mnt:0,ext:0,n:""},
-  // G80 M3
-  {s:"M",y:"正2026",pd:"01-06/2026生產",m:"M3 Competition M xDrive",p:6200000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"M",y:"25/26",pd:"07-12/2025生產",m:"M3 Competition M xDrive",p:6200000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"M",y:"24/25",pd:"07-12/2024生產",m:"M3 Competition M xDrive",p:6180000,f:"100/48",ins:1,mnt:1,ext:0,n:""},
-  // G81 M3 Touring
-  {s:"M",y:"正2026",pd:"01-06/2026生產",m:"M3 Competition Touring M xDrive",p:6280000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"M",y:"25/26",pd:"07-12/2025生產",m:"M3 Competition Touring M xDrive",p:6280000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  // G82 M4
-  {s:"M",y:"正2026",pd:"01-06/2026生產",m:"M4 Competition M xDrive",p:6250000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"M",y:"25/26",pd:"07-12/2025生產",m:"M4 Competition M xDrive",p:6250000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  // G90 M5 Sedan
-  {s:"M",y:"正2026",pd:"01-06/2026生產",m:"M5 Sedan",p:7660000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"M",y:"25/26",pd:"07-10/2025生產",m:"M5 Sedan",p:7660000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  // G99 M5 Touring
-  {s:"M",y:"正2026",pd:"01-06/2026生產",m:"M5 Touring",p:7780000,f:"80/48",ins:0,mnt:0,ext:0,n:""},
-  // F96 X6 M
-  {s:"M",y:"正2025",pd:"01-06/2025生產",m:"X6 M Competition",p:7600000,f:"80/48",ins:0,mnt:1,ext:0,n:""},
-  // I20 iX
-  {s:"i",y:"正2026",pd:"01-06/2026生產",m:"iX xDrive45 Excellence",p:3380000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"i",y:"正2026",pd:"01-06/2026生產",m:"iX xDrive45 M Sport",p:3680000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"i",y:"正2026",pd:"01-06/2026生產",m:"iX xDrive60 M Sport",p:4880000,f:"120/48",ins:0,mnt:0,ext:0,n:""},
-  {s:"i",y:"25/26",pd:"03-12/2025生產",m:"iX xDrive45 M Sport",p:3680000,f:"120/48",ins:0,mnt:0,ext:0,n:""}
+  {y:"正2026",pd:"01-06/2026生產",m:"120 Sport",p:1570000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"120 M Sport",p:1850000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M135 xDrive",p:2700000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"120 Sport",p:1570000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"120 M Sport",p:1850000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"M135 xDrive",p:2700000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"25/26",pd:"03-06/2025生產",m:"120 Sport",p:1550000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"25/26",pd:"03-06/2025生產",m:"120 M Sport",p:1830000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"25/26",pd:"03-06/2025生產",m:"M135 xDrive",p:2680000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2025",pd:"01-02/2025生產",m:"120 M Sport",p:1830000,f:"120/48",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-06/2026生產",m:"220 M Racing Edition",p:1900000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M235 xDrive Racing Edition",p:2750000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"220 M Racing Edition",p:1890000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"M235 xDrive Racing Edition",p:2730000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"25/26",pd:"03-06/2025生產",m:"M235 xDrive Racing Edition",p:2730000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"218i Active Tourer Luxe 豪華版",p:1590000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"218i Active Tourer Luxury 限量版",p:1570000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2026",pd:"01-03/2026生產",m:"220i Coupé M Sport",p:2120000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"220i Coupé M Sport",p:2120000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"正2025",pd:"01-07/2025生產",m:"220i Coupé M Sport",p:2120000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2025",pd:"01-07/2025生產",m:"M240i xDrive Coupé",p:3060000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"318i M Sport",p:2270000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"320i M Sport",p:2490000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"330i M Sport",p:2990000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"318i M Sport",p:2270000,f:"120/48",ins:1,mnt:0,ext:1},
+  {y:"25/26",pd:"08-12/2025生產",m:"320i M Sport",p:2490000,f:"180/48",ins:1,mnt:0,ext:1},
+  {y:"25/26",pd:"08-12/2025生產",m:"330i M Sport",p:2990000,f:"180/48",ins:1,mnt:0,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"318i Sport",p:2190000,f:"200/48",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"320i M Sport",p:2490000,f:"200/60",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"330i M Sport",p:2990000,f:"250/60",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"M340i xDrive",p:3680000,f:"320/60",ins:1,mnt:1,ext:1},
+  {y:"24/25",pd:"08-12/2024生產",m:"M340i xDrive",p:3680000,f:"320/60",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-06/2026生產",m:"320i Touring M Racing Edition",p:2640000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"330i Touring M Sport",p:3060000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"330i Touring M Sport",p:3060000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"420i Coupé M Racing Edition",p:2690000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"430i Coupé M Racing Edition",p:3220000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M440i xDrive Coupé",p:3880000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"420i Coupé M Sport",p:2610000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"430i Coupé M Sport",p:3140000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"430i Coupé M Sport",p:3140000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"M440i xDrive Coupé",p:3880000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"24/25",pd:"03-10/2024生產",m:"430i Coupé M Sport",p:3140000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"430i xDrive Convertible M Sport",p:3550000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"430i xDrive Convertible M Sport",p:3550000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"420i Gran Coupé M Racing Edition",p:2710000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"430i Gran Coupé M Racing Edition",p:3240000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"420i Gran Coupé M Sport",p:2630000,f:"180/48",ins:0,mnt:1,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"430i Gran Coupé M Sport",p:3160000,f:"180/48",ins:0,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"i4 eDrive40",p:2790000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"i4 M60 xDrive",p:3330000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"i4 eDrive40",p:2790000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"i4 M60 xDrive",p:3330000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"i4 eDrive40",p:2750000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"24/25",pd:"07-12/2024生產",m:"i4 eDrive40",p:2750000,f:"180/48",ins:1,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"520i M Sport",p:2990000,f:"180/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"530i M Sport",p:3390000,f:"180/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"520i M Sport",p:2990000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"530i M Sport",p:3390000,f:"180/48",ins:1,mnt:1,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"520i M Sport",p:2960000,f:"180/48",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-06/2025生產",m:"530i M Sport",p:3390000,f:"180/48",ins:0,mnt:1,ext:1},
+  {y:"24/25",pd:"07-12/2024生產",m:"520i M Sport",p:2960000,f:"200/48",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-06/2026生產",m:"i5 eDrive40 M Sport",p:3300000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"i5 M60 xDrive",p:4860000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"03-10/2025生產",m:"i5 eDrive40 M Sport",p:3290000,f:"180/48",ins:0,mnt:1,ext:0},
+  {y:"25/26",pd:"03-10/2025生產",m:"i5 M60 xDrive",p:4850000,f:"180/48",ins:0,mnt:1,ext:0},
+  {y:"24/25",pd:"07-12/2024生產",m:"i5 eDrive40 M Sport",p:3290000,f:"180/48",ins:1,mnt:1,ext:1},
+  {y:"24/25",pd:"07-12/2024生產",m:"i5 M60 xDrive",p:4850000,f:"180/48",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-06/2026生產",m:"520i Touring M Sport",p:3090000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"520i Touring M Sport",p:3090000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"520i Touring M Sport",p:3060000,f:"180/48",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-06/2026生產",m:"i5 eDrive40 Touring M Sport",p:3400000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"i5 M60 xDrive Touring",p:4960000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"03-10/2025生產",m:"i5 eDrive40 Touring M Sport",p:3390000,f:"180/48",ins:0,mnt:1,ext:0},
+  {y:"25/26",pd:"03-10/2025生產",m:"i5 M60 xDrive Touring",p:4950000,f:"180/48",ins:0,mnt:1,ext:0},
+  {y:"24/25",pd:"03-12/2024生產",m:"i5 M60 xDrive Touring",p:4950000,f:"200/60",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-06/2026生產",m:"735i Pure Excellence",p:4750000,f:"180/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"735i Edition M",p:5120000,f:"180/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"740i Edition M",p:6150000,f:"180/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"735i Pure Excellence",p:4750000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"735i Edition M",p:5120000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"740i Edition M",p:6150000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"735i Luxury",p:4930000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-06/2025生產",m:"740i Luxury",p:6000000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-06/2025生產",m:"740i Excellence",p:6400000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"24/25",pd:"07-12/2024生產",m:"735i Luxury",p:4930000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-06/2026生產",m:"i7 eDrive50 Excellence",p:5980000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"24/25",pd:"07-12/2024生產",m:"i7 eDrive50 Excellence",p:5980000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-06/2026生產",m:"X1 sDrive18i M Sport",p:1990000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"X1 sDrive20i M Sport",p:2200000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"X1 sDrive18i M Sport",p:1990000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"X1 sDrive20i M Sport",p:2200000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"正2026",pd:"01-02/2026生產",m:"iX1 eDrive20 xLine",p:2040000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-02/2026生產",m:"iX1 xDrive30 xLine",p:2340000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"iX1 eDrive20 xLine",p:2040000,f:"80/48",ins:0,mnt:1,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"iX1 xDrive30 xLine",p:2340000,f:"80/48",ins:0,mnt:1,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"iX1 eDrive20 xLine",p:1990000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"X2 sDrive20i M Sport",p:2260000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"X2 M35i xDrive",p:2890000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"X2 sDrive20i M Sport",p:2260000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"X2 M35i xDrive",p:2890000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"X2 sDrive20i M Sport",p:2250000,f:"200/60",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-02/2026生產",m:"iX2 xDrive30 M Sport",p:2420000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"iX2 xDrive30 M Sport",p:2420000,f:"80/48",ins:0,mnt:1,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"iX2 xDrive30 M Sport",p:2370000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X3 20 xDrive xLine",p:2490000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X3 20 xDrive M Sport",p:2770000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X3 M50 xDrive",p:3830000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"X3 20 xDrive xLine",p:2490000,f:"120/48",ins:1,mnt:0,ext:1},
+  {y:"25/26",pd:"08-12/2025生產",m:"X3 20 xDrive M Sport",p:2770000,f:"120/48",ins:1,mnt:0,ext:1},
+  {y:"25/26",pd:"08-12/2025生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"120/48",ins:1,mnt:0,ext:1},
+  {y:"25/26",pd:"08-12/2025生產",m:"X3 M50 xDrive",p:3830000,f:"120/48",ins:1,mnt:0,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"X3 20 xDrive xLine",p:2490000,f:"200/60",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"X3 20 xDrive M Sport",p:2770000,f:"200/60",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"X3 M50 xDrive",p:3830000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-07/2026生產",m:"X5 xDrive30d M Sport 鉑金版",p:3540000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X5 xDrive40i M Sport 鉑金版",p:3990000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"X5 xDrive30d M Sport 鉑金版",p:3540000,f:"200/60",ins:1,mnt:0,ext:1},
+  {y:"25/26",pd:"08-12/2025生產",m:"X5 xDrive40i M Sport 鉑金版",p:3990000,f:"200/60",ins:1,mnt:0,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"X5 xDrive30d xLine",p:3260000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"X5 xDrive40i M Sport",p:3730000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"24/25",pd:"08-12/2024生產",m:"X5 xDrive40i M Sport",p:3730000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-07/2026生產",m:"X6 xDrive40i M Sport 鉑金版",p:4060000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X6 M60i xDrive",p:5650000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"X6 xDrive40i M Sport 鉑金版",p:4060000,f:"200/60",ins:1,mnt:0,ext:1},
+  {y:"25/26",pd:"08-12/2025生產",m:"X6 M60i xDrive",p:5650000,f:"200/60",ins:1,mnt:0,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"X6 xDrive40i M Sport",p:3800000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-07/2026生產",m:"X7 xDrive40i",p:5290000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5430000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i",p:5290000,f:"200/60",ins:1,mnt:0,ext:1},
+  {y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5430000,f:"200/60",ins:1,mnt:0,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"X7 xDrive40i",p:5100000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2025",pd:"01-07/2025生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5220000,f:"300/60",ins:1,mnt:1,ext:1},
+  {y:"正2026",pd:"01-07/2026生產",m:"M2 Coupé",p:3750000,f:"–",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"M2 Coupé",p:3750000,f:"–",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"M2 Coupé CS",p:5630000,f:"–",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M3 Competition M xDrive",p:6200000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"24/25",pd:"07-12/2024生產",m:"M3 Competition M xDrive",p:6180000,f:"100/48",ins:1,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M3 Competition Touring M xDrive",p:6280000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"M3 Competition Touring M xDrive",p:6280000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M4 Competition M xDrive",p:6250000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M5 Sedan",p:7660000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"M5 Sedan",p:7660000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M5 Touring",p:7780000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"X6 M Competition",p:7600000,f:"80/48",ins:0,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"iX xDrive45 Excellence",p:3380000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"iX xDrive45 M Sport",p:3680000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"iX xDrive60 M Sport",p:4880000,f:"120/48",ins:0,mnt:0,ext:0}
 ];
 var curY = "正2026";
 document.getElementById('ytabs').addEventListener('click', function(e) {
@@ -326,46 +284,42 @@ document.getElementById('ytabs').addEventListener('click', function(e) {
   curY = e.target.getAttribute('data-y');
   render();
 });
-function showGift(ins, mnt, ext, name, fin) {
+function showGift(ins,mnt,ext,name,fin) {
   document.getElementById('modalTitle').textContent = name;
   document.getElementById('modalSub').textContent = '分期方案：' + fin;
-  var iEl = document.getElementById('m-ins');
-  var mEl = document.getElementById('m-mnt');
-  var eEl = document.getElementById('m-ext');
-  iEl.textContent = ins ? '✓ 贈送' : '–';
-  iEl.className = 'modal-val ' + (ins ? 'yes' : 'no');
-  mEl.textContent = mnt ? '✓ 贈送' : '–';
-  mEl.className = 'modal-val ' + (mnt ? 'yes' : 'no');
-  eEl.textContent = ext ? '✓ 贈送' : '–';
-  eEl.className = 'modal-val ' + (ext ? 'yes' : 'no');
+  var iEl=document.getElementById('m-ins');
+  var mEl=document.getElementById('m-mnt');
+  var eEl=document.getElementById('m-ext');
+  iEl.textContent=ins?'✓ 贈送':'–'; iEl.className='modal-val '+(ins?'yes':'no');
+  mEl.textContent=mnt?'✓ 贈送':'–'; mEl.className='modal-val '+(mnt?'yes':'no');
+  eEl.textContent=ext?'✓ 贈送':'–'; eEl.className='modal-val '+(ext?'yes':'no');
   document.getElementById('modalOverlay').classList.add('show');
 }
 function closeModal(e) {
-  if (e.target === document.getElementById('modalOverlay')) {
+  if (e.target===document.getElementById('modalOverlay'))
     document.getElementById('modalOverlay').classList.remove('show');
-  }
 }
 function render() {
-  var q = document.getElementById('search').value.toLowerCase();
-  var tbody = document.getElementById('tbody');
-  tbody.innerHTML = '';
-  var count = 0;
+  var q=document.getElementById('search').value.toLowerCase();
+  var tbody=document.getElementById('tbody');
+  tbody.innerHTML='';
+  var count=0;
   data.forEach(function(r) {
-    if (curY && r.y !== curY) return;
-    if (q && r.m.toLowerCase().indexOf(q) === -1) return;
+    if (curY && r.y!==curY) return;
+    if (q && r.m.toLowerCase().indexOf(q)===-1) return;
     count++;
-    var tr = document.createElement('tr');
-    var finText = r.f === '--' ? '--' : r.f.replace(/(\d+)\/(\d+)/, '$1萬/$2期');
-    var hasGift = r.ins || r.mnt || r.ext;
-    var giftLabel = hasGift ? '🎁 贈送項目' : '尚無贈送項目';
-    tr.innerHTML =
-      '<td><span class="yp">'+r.y+'</span><span class="prod">('+r.pd+')</span></td>' +
-      '<td><div class="car-name">'+r.m+'</div><div class="car-price">NT$'+r.p.toLocaleString()+'</div></td>' +
-      '<td class="fin">'+finText+'</td>' +
-      '<td class="center"><button class="gift-btn'+(hasGift?'':' no-gift')+'"'+(hasGift?' onclick="showGift('+r.ins+','+r.mnt+','+r.ext+',\''+r.m.replace(/'/g,"\\'")+'  ('+r.y+')\',\''+finText+'\')"':'')+'>'+giftLabel+'</button></td>';
+    var tr=document.createElement('tr');
+    var finText=r.f==='--'?'--':r.f.replace(/(\d+)\/(\d+)/,'$1萬/$2期');
+    var hasGift=r.ins||r.mnt||r.ext;
+    var giftLabel=hasGift?'🎁 贈送項目':'尚無贈送項目';
+    tr.innerHTML=
+      '<td><span class="yp">'+r.y+'</span><span class="prod">('+r.pd+')</span></td>'+
+      '<td><div class="car-name">'+r.m+'</div><div class="car-price">NT$'+r.p.toLocaleString()+'</div></td>'+
+      '<td class="fin">'+finText+'</td>'+
+      '<td class="center"><button class="gift-btn'+(hasGift?'':' no-gift')+'"'+(hasGift?' onclick="showGift('+r.ins+','+r.mnt+','+r.ext+',\''+r.m.replace(/'/g,"\\'")+' ('+r.y+')\',\''+finText+'\')"':'')+'>'+giftLabel+'</button></td>';
     tbody.appendChild(tr);
   });
-  document.getElementById('count').innerHTML = '共 <span>'+count+'</span> 筆資料';
+  document.getElementById('count').innerHTML='共 <span>'+count+'</span> 筆資料';
 }
 render();
 </script>

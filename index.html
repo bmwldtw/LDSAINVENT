@@ -5,25 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BMW 車價查詢 2026年5月</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+  @font-face {
+    font-family: 'BMWTypeNext';
+    src: url('fonts/BMWTypeNext-Light.otf') format('opentype');
+    font-weight: 300;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'BMWTypeNext';
+    src: url('fonts/BMWTypeNext-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'WenDing';
+    src: url('fonts/arudjingxiheipe1xg30_md_文鼎晶熙黑體-細體字_.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'WenDing';
+    src: url('fonts/arudjingxiheipe1xg30_hv_文鼎晶熙黑體_-_粗體字_.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+  }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   :root{--bg:#ffffff;--surface:#f5f5f5;--surface2:#eeeeee;--border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.15);--text:#111111;--text2:#555555;--text3:#999999;--blue:#1b6fff;--gold:#a07820}
-  body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;font-weight:300;min-height:100vh}
+  body{background:var(--bg);color:var(--text);font-family:'BMWTypeNext','WenDing',sans-serif;font-weight:300;min-height:100vh}
   header{border-bottom:1px solid var(--border);padding:1.2rem 1.5rem;position:sticky;top:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);z-index:100}
   .logo-text{font-size:15px;font-weight:600;letter-spacing:0.08em;color:var(--text);display:block}
   .header-sub{font-size:11px;color:var(--gold);letter-spacing:0.08em;margin-top:3px;display:block}
-  .promo-banner{display:block;background:linear-gradient(90deg,#1b3a6b,#1b6fff);color:#fff;text-align:center;padding:10px 1rem;font-size:13px;font-weight:500;letter-spacing:0.04em;text-decoration:none;transition:opacity 0.15s}
-  .promo-banner:hover{opacity:0.9}
+  .tab.tab-presale{border-color:#e65c00;color:#e65c00}
+  .tab.tab-presale:hover{background:rgba(230,92,0,0.08)}
+  .tab.tab-presale.active-y{background:#e65c00;border-color:#e65c00;color:#fff}
+  .presale-badge{display:inline-block;background:#e65c00;color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;margin-right:6px;letter-spacing:0.05em;vertical-align:middle}
+  /* 試駕卡片 */
+  .promo-card{display:block;background:linear-gradient(135deg,#0a1f4e 0%,#1b4fff 60%,#0066cc 100%);color:#fff;text-decoration:none;padding:1.2rem 1.5rem;margin-bottom:1.5rem;border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 4px 20px rgba(27,79,255,0.3);transition:transform 0.15s,box-shadow 0.15s;overflow:hidden;position:relative}
+  .promo-card::before{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;background:rgba(255,255,255,0.05);border-radius:50%}
+  .promo-card::after{content:"";position:absolute;right:40px;bottom:-50px;width:120px;height:120px;background:rgba(255,255,255,0.04);border-radius:50%}
+  .promo-card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(27,79,255,0.4)}
+  .promo-card-left{position:relative;z-index:1}
+  .promo-card-tag{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;opacity:0.75;margin-bottom:6px}
+  .promo-card-title{font-size:18px;font-weight:600;letter-spacing:0.02em;margin-bottom:4px}
+  .promo-card-sub{font-size:12px;opacity:0.8}
+  .promo-card-btn{position:relative;z-index:1;background:#fff;color:#1b4fff;font-size:13px;font-weight:700;padding:10px 22px;border-radius:50px;white-space:nowrap;letter-spacing:0.04em;flex-shrink:0;transition:background 0.15s}
+  .promo-card:hover .promo-card-btn{background:#f0f4ff}
+  /* 浮動按鈕 */
+  .float-btn{position:fixed;bottom:24px;right:20px;background:linear-gradient(135deg,#1b4fff,#0066cc);color:#fff;text-decoration:none;border-radius:50px;padding:12px 20px;font-size:13px;font-weight:600;font-family:'BMWTypeNext','WenDing',sans-serif;display:flex;align-items:center;gap:8px;box-shadow:0 4px 16px rgba(27,79,255,0.45);z-index:999;transition:transform 0.15s,box-shadow 0.15s;letter-spacing:0.03em}
+  .float-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(27,79,255,0.55)}
+  .float-btn svg{flex-shrink:0}
   main{max-width:1200px;margin:0 auto;padding:1.5rem 1rem}
   .filter-group{margin-bottom:1rem}
   .filter-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
   .tabs{display:flex;gap:6px;flex-wrap:wrap}
-  .tab{padding:5px 12px;border:1px solid var(--border2);border-radius:2px;background:transparent;color:var(--text2);font-size:12px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;transition:all 0.15s}
+  .tab{padding:5px 12px;border:1px solid var(--border2);border-radius:2px;background:transparent;color:var(--text2);font-size:12px;font-family:'BMWTypeNext','WenDing',sans-serif;cursor:pointer;transition:all 0.15s}
   .tab:hover{color:var(--text);border-color:rgba(0,0,0,0.3);background:var(--surface)}
   .tab.active-y{background:var(--gold);border-color:var(--gold);color:#fff;font-weight:500}
   .search-wrap{position:relative;margin-bottom:1rem}
   .search-wrap svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3)}
-  input[type=text]{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:2px;color:var(--text);font-family:'Noto Sans TC',sans-serif;font-size:13px;padding:8px 12px 8px 36px;outline:none;transition:border-color 0.15s}
+  input[type=text]{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:2px;color:var(--text);font-family:'BMWTypeNext','WenDing',sans-serif;font-size:13px;padding:8px 12px 8px 36px;outline:none;transition:border-color 0.15s}
   input[type=text]:focus{border-color:var(--blue)}
   input[type=text]::placeholder{color:var(--text3)}
   .count{font-size:12px;color:var(--text3);margin-bottom:0.8rem}
@@ -43,7 +83,7 @@
   .car-name{font-weight:500;font-size:13px;line-height:1.4}
   .car-price{font-size:12px;color:var(--text2);margin-top:3px;font-weight:400}
   .fin{color:var(--blue);font-size:12px;white-space:nowrap}
-  .gift-btn{display:inline-block;padding:4px 12px;background:var(--blue);color:#fff;border-radius:4px;font-size:12px;font-weight:500;border:none;cursor:pointer;font-family:'Noto Sans TC',sans-serif;white-space:nowrap}
+  .gift-btn{display:inline-block;padding:4px 12px;background:var(--blue);color:#fff;border-radius:4px;font-size:12px;font-weight:500;border:none;cursor:pointer;font-family:'BMWTypeNext','WenDing',sans-serif;white-space:nowrap}
   .gift-btn:hover{background:#1459d4}
   .gift-btn.no-gift{background:var(--surface2);color:var(--text3);cursor:default}
   .gift-btn.no-gift:hover{background:var(--surface2)}
@@ -59,7 +99,7 @@
   .modal-val{margin-left:auto;font-size:13px;font-weight:500}
   .modal-val.yes{color:#1a9640}
   .modal-val.no{color:#ccc}
-  .modal-close{margin-top:1.2rem;width:100%;padding:10px;background:var(--surface);border:none;border-radius:6px;font-size:13px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;color:var(--text2)}
+  .modal-close{margin-top:1.2rem;width:100%;padding:10px;background:var(--surface);border:none;border-radius:6px;font-size:13px;font-family:'BMWTypeNext','WenDing',sans-serif;cursor:pointer;color:var(--text2)}
   .modal-close:hover{background:var(--surface2)}
   footer{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:3rem;font-size:11px;color:var(--text3)}
   @media(max-width:640px){main{padding:1rem 0.75rem}th,td{padding:8px 10px}.fin{font-size:11px}}
@@ -68,20 +108,26 @@
 <body>
 <header>
   <span class="logo-text">BMW 台北鎔德</span>
-  <span class="header-sub">2026 / 5月優惠</span>
+  <span class="header-sub">2026 / 7月優惠</span>
 </header>
-<a class="promo-banner" href="https://survey.bmw.com.tw/s/LNGxK" target="_blank">
-  🎁 試駕即贈專屬好禮　立即預約 →
-</a>
 <main>
+  <a class="promo-card" href="https://survey.bmw.com.tw/s/LNGxK" target="_blank">
+    <div class="promo-card-left">
+      <div class="promo-card-tag">BMW 台北鎔德 獨家優惠</div>
+      <div class="promo-card-title">🎁 試駕即贈專屬好禮</div>
+      <div class="promo-card-sub">立即預約，享受頂級試駕體驗</div>
+    </div>
+    <div class="promo-card-btn">立即預約 →</div>
+  </a>
   <div class="filter-group">
     <div class="filter-label">年式</div>
     <div class="tabs" id="ytabs">
       <button class="tab" data-y="">全部</button>
+      <button class="tab tab-presale" data-y="預售">🔖 預售 iX3</button>
+      <button class="tab" data-y="26/27">26/27</button>
       <button class="tab active-y" data-y="正2026">正2026</button>
       <button class="tab" data-y="25/26">25/26</button>
       <button class="tab" data-y="正2025">正2025</button>
-      <button class="tab" data-y="24/25">24/25</button>
     </div>
   </div>
   <div class="search-wrap">
@@ -100,7 +146,12 @@
     </table>
   </div>
 </main>
-<footer>資料來源：BMW Taiwan 2026年5月銷售辦法 · 售價及優惠以實際成交為準</footer>
+<footer>資料來源：BMW Taiwan 2026年7月銷售辦法 · 售價及優惠以實際成交為準</footer>
+
+<a class="float-btn" href="https://survey.bmw.com.tw/s/LNGxK" target="_blank">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+  預約試駕
+</a>
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
   <div class="modal">
     <div class="modal-title" id="modalTitle"></div>
@@ -125,27 +176,26 @@
 </div>
 <script>
 var data = [
-  {y:"正2026",pd:"01-06/2026生產",m:"120 Sport",p:1570000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"120 M Sport",p:1850000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"M135 xDrive",p:2700000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"120 Sport",p:1570000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"120 M Sport",p:1850000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M135 xDrive",p:2700000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M135 xDrive Boost+ Edition",p:2730000,f:"120/48",ins:1,mnt:0,ext:0},
   {y:"25/26",pd:"07-12/2025生產",m:"120 Sport",p:1570000,f:"120/48",ins:1,mnt:1,ext:0},
   {y:"25/26",pd:"07-12/2025生產",m:"120 M Sport",p:1850000,f:"120/48",ins:1,mnt:1,ext:0},
   {y:"25/26",pd:"07-12/2025生產",m:"M135 xDrive",p:2700000,f:"120/48",ins:1,mnt:1,ext:0},
   {y:"25/26",pd:"03-06/2025生產",m:"120 Sport",p:1550000,f:"120/48",ins:1,mnt:1,ext:0},
   {y:"25/26",pd:"03-06/2025生產",m:"120 M Sport",p:1830000,f:"120/48",ins:1,mnt:1,ext:0},
   {y:"25/26",pd:"03-06/2025生產",m:"M135 xDrive",p:2680000,f:"120/48",ins:1,mnt:1,ext:0},
-  {y:"正2025",pd:"01-02/2025生產",m:"120 M Sport",p:1830000,f:"120/48",ins:1,mnt:1,ext:1},
   {y:"正2026",pd:"01-06/2026生產",m:"220 M Racing Edition",p:1900000,f:"120/48",ins:1,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"M235 xDrive Racing Edition",p:2750000,f:"120/48",ins:1,mnt:0,ext:0},
   {y:"25/26",pd:"07-12/2025生產",m:"220 M Racing Edition",p:1890000,f:"120/48",ins:1,mnt:1,ext:0},
   {y:"25/26",pd:"07-12/2025生產",m:"M235 xDrive Racing Edition",p:2730000,f:"120/48",ins:1,mnt:1,ext:0},
-  {y:"25/26",pd:"03-06/2025生產",m:"M235 xDrive Racing Edition",p:2730000,f:"120/48",ins:1,mnt:1,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"218i Active Tourer Luxe 豪華版",p:1590000,f:"120/48",ins:1,mnt:0,ext:0},
   {y:"25/26",pd:"07-10/2025生產",m:"218i Active Tourer Luxury 限量版",p:1570000,f:"120/48",ins:1,mnt:1,ext:0},
-  {y:"正2026",pd:"01-03/2026生產",m:"220i Coupé M Sport",p:2120000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"08-12/2025生產",m:"220i Coupé M Sport",p:2120000,f:"120/48",ins:1,mnt:0,ext:0},
-  {y:"正2025",pd:"01-07/2025生產",m:"220i Coupé M Sport",p:2120000,f:"120/48",ins:1,mnt:1,ext:0},
-  {y:"正2025",pd:"01-07/2025生產",m:"M240i xDrive Coupé",p:3060000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2026",pd:"01-03/2026生產",m:"220i Coupe M Sport",p:2120000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"220i Coupe M Sport",p:2120000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"正2025",pd:"01-07/2025生產",m:"220i Coupe M Sport",p:2120000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2025",pd:"01-07/2025生產",m:"M240i xDrive Coupe",p:3060000,f:"120/48",ins:1,mnt:1,ext:0},
   {y:"正2026",pd:"01-07/2026生產",m:"318i M Sport",p:2270000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-07/2026生產",m:"320i M Sport",p:2490000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-07/2026生產",m:"330i M Sport",p:2990000,f:"120/48",ins:0,mnt:0,ext:0},
@@ -153,128 +203,113 @@ var data = [
   {y:"25/26",pd:"08-12/2025生產",m:"320i M Sport",p:2490000,f:"180/48",ins:1,mnt:0,ext:1},
   {y:"25/26",pd:"08-12/2025生產",m:"330i M Sport",p:2990000,f:"180/48",ins:1,mnt:0,ext:1},
   {y:"正2025",pd:"01-07/2025生產",m:"318i Sport",p:2190000,f:"200/48",ins:1,mnt:1,ext:1},
-  {y:"正2025",pd:"01-07/2025生產",m:"320i M Sport",p:2490000,f:"200/60",ins:1,mnt:1,ext:1},
   {y:"正2025",pd:"01-07/2025生產",m:"330i M Sport",p:2990000,f:"250/60",ins:1,mnt:1,ext:1},
   {y:"正2025",pd:"01-07/2025生產",m:"M340i xDrive",p:3680000,f:"320/60",ins:1,mnt:1,ext:1},
-  {y:"24/25",pd:"08-12/2024生產",m:"M340i xDrive",p:3680000,f:"320/60",ins:1,mnt:1,ext:1},
   {y:"正2026",pd:"01-06/2026生產",m:"320i Touring M Racing Edition",p:2640000,f:"120/48",ins:1,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"330i Touring M Sport",p:3060000,f:"120/48",ins:1,mnt:0,ext:0},
   {y:"25/26",pd:"07-10/2025生產",m:"330i Touring M Sport",p:3060000,f:"120/48",ins:1,mnt:1,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"420i Coupé M Racing Edition",p:2690000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"430i Coupé M Racing Edition",p:3220000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"M440i xDrive Coupé",p:3880000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"07-10/2025生產",m:"420i Coupé M Sport",p:2610000,f:"120/48",ins:0,mnt:1,ext:0},
-  {y:"25/26",pd:"07-10/2025生產",m:"430i Coupé M Sport",p:3140000,f:"120/48",ins:0,mnt:1,ext:0},
-  {y:"正2025",pd:"01-06/2025生產",m:"430i Coupé M Sport",p:3140000,f:"120/48",ins:1,mnt:1,ext:0},
-  {y:"正2025",pd:"01-06/2025生產",m:"M440i xDrive Coupé",p:3880000,f:"120/48",ins:1,mnt:1,ext:0},
-  {y:"24/25",pd:"03-10/2024生產",m:"430i Coupé M Sport",p:3140000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"420i Coupe M Racing Edition",p:2690000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"430i Coupe M Racing Edition",p:3220000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"M440i xDrive Coupe",p:3880000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"420i Coupe M Sport",p:2610000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"430i Coupe M Sport",p:3140000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"430i Coupe M Sport",p:3140000,f:"120/48",ins:1,mnt:1,ext:0},
+  {y:"正2025",pd:"01-06/2025生產",m:"M440i xDrive Coupe",p:3880000,f:"120/48",ins:1,mnt:1,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"430i xDrive Convertible M Sport",p:3550000,f:"80/48",ins:0,mnt:0,ext:0},
   {y:"25/26",pd:"07-10/2025生產",m:"430i xDrive Convertible M Sport",p:3550000,f:"80/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"420i Gran Coupé M Racing Edition",p:2710000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"430i Gran Coupé M Racing Edition",p:3240000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"07-10/2025生產",m:"420i Gran Coupé M Sport",p:2630000,f:"180/48",ins:0,mnt:1,ext:0},
-  {y:"25/26",pd:"07-10/2025生產",m:"430i Gran Coupé M Sport",p:3160000,f:"180/48",ins:0,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"420i Gran Coupe M Racing Edition",p:2710000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"430i Gran Coupe M Racing Edition",p:3240000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"420i Gran Coupe M Sport",p:2630000,f:"180/48",ins:0,mnt:1,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"430i Gran Coupe M Sport",p:3160000,f:"180/48",ins:0,mnt:1,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"i4 eDrive40",p:2790000,f:"80/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"i4 M60 xDrive",p:3330000,f:"80/48",ins:0,mnt:0,ext:0},
   {y:"25/26",pd:"07-12/2025生產",m:"i4 eDrive40",p:2790000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"25/26",pd:"07-12/2025生產",m:"i4 M60 xDrive",p:3330000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"正2025",pd:"01-06/2025生產",m:"i4 eDrive40",p:2750000,f:"120/48",ins:0,mnt:1,ext:0},
-  {y:"24/25",pd:"07-12/2024生產",m:"i4 eDrive40",p:2750000,f:"180/48",ins:1,mnt:1,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"520i M Sport",p:2990000,f:"180/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"530i M Sport",p:3390000,f:"180/48",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"07-12/2025生產",m:"520i M Sport",p:2990000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"520i M Sport",p:2990000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"530i M Sport",p:3390000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"07-12/2025生產",m:"520i M Sport",p:2990000,f:"180/48",ins:1,mnt:1,ext:0},
   {y:"25/26",pd:"07-12/2025生產",m:"530i M Sport",p:3390000,f:"180/48",ins:1,mnt:1,ext:0},
-  {y:"正2025",pd:"01-06/2025生產",m:"520i M Sport",p:2960000,f:"180/48",ins:1,mnt:1,ext:1},
-  {y:"正2025",pd:"01-06/2025生產",m:"530i M Sport",p:3390000,f:"180/48",ins:0,mnt:1,ext:1},
-  {y:"24/25",pd:"07-12/2024生產",m:"520i M Sport",p:2960000,f:"200/48",ins:1,mnt:1,ext:1},
   {y:"正2026",pd:"01-06/2026生產",m:"i5 eDrive40 M Sport",p:3300000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"i5 M60 xDrive",p:4860000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"25/26",pd:"03-10/2025生產",m:"i5 eDrive40 M Sport",p:3290000,f:"180/48",ins:0,mnt:1,ext:0},
   {y:"25/26",pd:"03-10/2025生產",m:"i5 M60 xDrive",p:4850000,f:"180/48",ins:0,mnt:1,ext:0},
-  {y:"24/25",pd:"07-12/2024生產",m:"i5 eDrive40 M Sport",p:3290000,f:"180/48",ins:1,mnt:1,ext:1},
-  {y:"24/25",pd:"07-12/2024生產",m:"i5 M60 xDrive",p:4850000,f:"180/48",ins:1,mnt:1,ext:1},
   {y:"正2026",pd:"01-06/2026生產",m:"520i Touring M Sport",p:3090000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"25/26",pd:"07-12/2025生產",m:"520i Touring M Sport",p:3090000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"正2025",pd:"01-06/2025生產",m:"520i Touring M Sport",p:3060000,f:"180/48",ins:1,mnt:1,ext:1},
   {y:"正2026",pd:"01-06/2026生產",m:"i5 eDrive40 Touring M Sport",p:3400000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"i5 M60 xDrive Touring",p:4960000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"03-10/2025生產",m:"i5 eDrive40 Touring M Sport",p:3390000,f:"180/48",ins:0,mnt:1,ext:0},
-  {y:"25/26",pd:"03-10/2025生產",m:"i5 M60 xDrive Touring",p:4950000,f:"180/48",ins:0,mnt:1,ext:0},
-  {y:"24/25",pd:"03-12/2024生產",m:"i5 M60 xDrive Touring",p:4950000,f:"200/60",ins:1,mnt:1,ext:1},
   {y:"正2026",pd:"01-06/2026生產",m:"735i Pure Excellence",p:4750000,f:"180/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"735i Edition M",p:5120000,f:"180/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"740i Edition M",p:6150000,f:"180/48",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"07-10/2025生產",m:"735i Pure Excellence",p:4750000,f:"180/48",ins:1,mnt:0,ext:0},
-  {y:"25/26",pd:"07-10/2025生產",m:"735i Edition M",p:5120000,f:"180/48",ins:1,mnt:0,ext:0},
-  {y:"25/26",pd:"07-10/2025生產",m:"740i Edition M",p:6150000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"735i Pure Excellence",p:4750000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"735i Edition M",p:5120000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"740i Edition M",p:6150000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"735i Pure Excellence",p:4750000,f:"300/60",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"735i Edition M",p:5120000,f:"300/60",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"07-10/2025生產",m:"740i Edition M",p:6150000,f:"300/60",ins:1,mnt:0,ext:0},
   {y:"正2025",pd:"01-06/2025生產",m:"735i Luxury",p:4930000,f:"300/60",ins:1,mnt:1,ext:1},
-  {y:"正2025",pd:"01-06/2025生產",m:"740i Luxury",p:6000000,f:"300/60",ins:1,mnt:1,ext:1},
-  {y:"正2025",pd:"01-06/2025生產",m:"740i Excellence",p:6400000,f:"300/60",ins:1,mnt:1,ext:1},
-  {y:"24/25",pd:"07-12/2024生產",m:"735i Luxury",p:4930000,f:"300/60",ins:1,mnt:1,ext:1},
   {y:"正2026",pd:"01-06/2026生產",m:"i7 eDrive50 Excellence",p:5980000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"24/25",pd:"07-12/2024生產",m:"i7 eDrive50 Excellence",p:5980000,f:"300/60",ins:1,mnt:1,ext:1},
-  {y:"正2026",pd:"01-06/2026生產",m:"X1 sDrive18i M Sport",p:1990000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"X1 sDrive20i M Sport",p:2200000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"X1 sDrive18i M Sport",p:1990000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"X1 sDrive20i M Sport",p:2200000,f:"120/48",ins:0,mnt:1,ext:0},
   {y:"25/26",pd:"07-10/2025生產",m:"X1 sDrive18i M Sport",p:1990000,f:"120/48",ins:0,mnt:1,ext:0},
   {y:"25/26",pd:"07-10/2025生產",m:"X1 sDrive20i M Sport",p:2200000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"26/27",pd:"03-12/2026生產",m:"iX1 eDrive20 xLine",p:2050000,f:"80/48",ins:0,mnt:0,ext:0},
+  {y:"26/27",pd:"03-12/2026生產",m:"iX1 xDrive30 xLine",p:2350000,f:"80/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-02/2026生產",m:"iX1 eDrive20 xLine",p:2040000,f:"80/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-02/2026生產",m:"iX1 xDrive30 xLine",p:2340000,f:"80/48",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"07-12/2025生產",m:"iX1 eDrive20 xLine",p:2040000,f:"80/48",ins:0,mnt:1,ext:0},
-  {y:"25/26",pd:"07-12/2025生產",m:"iX1 xDrive30 xLine",p:2340000,f:"80/48",ins:0,mnt:1,ext:0},
-  {y:"正2025",pd:"01-06/2025生產",m:"iX1 eDrive20 xLine",p:1990000,f:"120/48",ins:0,mnt:1,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"X2 sDrive20i M Sport",p:2260000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"X2 M35i xDrive",p:2890000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"X2 sDrive20i M Sport",p:2260000,f:"120/48",ins:0,mnt:1,ext:0},
+  {y:"正2026",pd:"01-06/2026生產",m:"X2 M35i xDrive",p:2890000,f:"120/48",ins:0,mnt:1,ext:0},
   {y:"25/26",pd:"07-12/2025生產",m:"X2 sDrive20i M Sport",p:2260000,f:"120/48",ins:0,mnt:1,ext:0},
-  {y:"25/26",pd:"07-12/2025生產",m:"X2 M35i xDrive",p:2890000,f:"120/48",ins:0,mnt:1,ext:0},
   {y:"正2025",pd:"01-06/2025生產",m:"X2 sDrive20i M Sport",p:2250000,f:"200/60",ins:1,mnt:1,ext:1},
+  {y:"26/27",pd:"03-12/2026生產",m:"iX2 xDrive30 M Sport",p:2430000,f:"80/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-02/2026生產",m:"iX2 xDrive30 M Sport",p:2420000,f:"80/48",ins:0,mnt:0,ext:0},
   {y:"25/26",pd:"07-10/2025生產",m:"iX2 xDrive30 M Sport",p:2420000,f:"80/48",ins:0,mnt:1,ext:0},
   {y:"正2025",pd:"01-06/2025生產",m:"iX2 xDrive30 M Sport",p:2370000,f:"120/48",ins:0,mnt:1,ext:0},
-  {y:"正2026",pd:"01-07/2026生產",m:"X3 20 xDrive xLine",p:2490000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-07/2026生產",m:"X3 20 xDrive M Sport",p:2770000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-07/2026生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-07/2026生產",m:"X3 M50 xDrive",p:3830000,f:"120/48",ins:1,mnt:0,ext:0},
-  {y:"25/26",pd:"08-12/2025生產",m:"X3 20 xDrive xLine",p:2490000,f:"120/48",ins:1,mnt:0,ext:1},
-  {y:"25/26",pd:"08-12/2025生產",m:"X3 20 xDrive M Sport",p:2770000,f:"120/48",ins:1,mnt:0,ext:1},
-  {y:"25/26",pd:"08-12/2025生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"120/48",ins:1,mnt:0,ext:1},
-  {y:"25/26",pd:"08-12/2025生產",m:"X3 M50 xDrive",p:3830000,f:"120/48",ins:1,mnt:0,ext:1},
+  {y:"正2026",pd:"01-07/2026生產",m:"X3 20 xDrive xLine",p:2490000,f:"180/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X3 20 xDrive M Sport",p:2770000,f:"180/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"180/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X3 M50 xDrive",p:3830000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"X3 20 xDrive xLine",p:2490000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"X3 20 xDrive M Sport",p:2770000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"180/48",ins:1,mnt:0,ext:0},
+  {y:"25/26",pd:"08-12/2025生產",m:"X3 M50 xDrive",p:3830000,f:"180/48",ins:1,mnt:0,ext:0},
   {y:"正2025",pd:"01-07/2025生產",m:"X3 20 xDrive xLine",p:2490000,f:"200/60",ins:1,mnt:1,ext:1},
   {y:"正2025",pd:"01-07/2025生產",m:"X3 20 xDrive M Sport",p:2770000,f:"200/60",ins:1,mnt:1,ext:1},
   {y:"正2025",pd:"01-07/2025生產",m:"X3 M50 xDrive Pure Edition 限量版",p:3390000,f:"300/60",ins:1,mnt:1,ext:1},
   {y:"正2025",pd:"01-07/2025生產",m:"X3 M50 xDrive",p:3830000,f:"300/60",ins:1,mnt:1,ext:1},
-  {y:"正2026",pd:"01-07/2026生產",m:"X5 xDrive30d M Sport 鉑金版",p:3540000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-07/2026生產",m:"X5 xDrive40i M Sport 鉑金版",p:3990000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X5 xDrive30d M Sport 鉑金版",p:3540000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X5 xDrive40i M Sport 鉑金版",p:3990000,f:"120/48",ins:1,mnt:0,ext:0},
   {y:"25/26",pd:"08-12/2025生產",m:"X5 xDrive30d M Sport 鉑金版",p:3540000,f:"200/60",ins:1,mnt:0,ext:1},
   {y:"25/26",pd:"08-12/2025生產",m:"X5 xDrive40i M Sport 鉑金版",p:3990000,f:"200/60",ins:1,mnt:0,ext:1},
-  {y:"正2025",pd:"01-07/2025生產",m:"X5 xDrive30d xLine",p:3260000,f:"300/60",ins:1,mnt:1,ext:1},
   {y:"正2025",pd:"01-07/2025生產",m:"X5 xDrive40i M Sport",p:3730000,f:"300/60",ins:1,mnt:1,ext:1},
-  {y:"24/25",pd:"08-12/2024生產",m:"X5 xDrive40i M Sport",p:3730000,f:"300/60",ins:1,mnt:1,ext:1},
-  {y:"正2026",pd:"01-07/2026生產",m:"X6 xDrive40i M Sport 鉑金版",p:4060000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-07/2026生產",m:"X6 M60i xDrive",p:5650000,f:"120/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X6 xDrive40i M Sport 鉑金版",p:4060000,f:"120/48",ins:1,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X6 M60i xDrive",p:5650000,f:"120/48",ins:1,mnt:0,ext:0},
   {y:"25/26",pd:"08-12/2025生產",m:"X6 xDrive40i M Sport 鉑金版",p:4060000,f:"200/60",ins:1,mnt:0,ext:1},
   {y:"25/26",pd:"08-12/2025生產",m:"X6 M60i xDrive",p:5650000,f:"200/60",ins:1,mnt:0,ext:1},
   {y:"正2025",pd:"01-07/2025生產",m:"X6 xDrive40i M Sport",p:3800000,f:"300/60",ins:1,mnt:1,ext:1},
-  {y:"正2026",pd:"01-07/2026生產",m:"X7 xDrive40i",p:5290000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-07/2026生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5430000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i",p:5290000,f:"200/60",ins:1,mnt:0,ext:1},
-  {y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5430000,f:"200/60",ins:1,mnt:0,ext:1},
+  {y:"正2026",pd:"01-07/2026生產",m:"X7 xDrive40i",p:5290000,f:"180/48",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5430000,f:"180/48",ins:0,mnt:0,ext:0},
+  {y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i",p:5290000,f:"200/60",ins:1,mnt:1,ext:1},
+  {y:"25/26",pd:"08-10/2025生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5430000,f:"200/60",ins:1,mnt:1,ext:1},
   {y:"正2025",pd:"01-07/2025生產",m:"X7 xDrive40i",p:5100000,f:"300/60",ins:1,mnt:1,ext:1},
   {y:"正2025",pd:"01-07/2025生產",m:"X7 xDrive40i M Excellence Limited Edition",p:5220000,f:"300/60",ins:1,mnt:1,ext:1},
-  {y:"正2026",pd:"01-07/2026生產",m:"M2 Coupé",p:3750000,f:"–",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"08-12/2025生產",m:"M2 Coupé",p:3750000,f:"–",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"08-12/2025生產",m:"M2 Coupé CS",p:5630000,f:"–",ins:0,mnt:0,ext:0},
+  {y:"26/27",pd:"08-12/2026生產",m:"M2 Coupe",p:3780000,f:"--",ins:0,mnt:0,ext:0},
+  {y:"26/27",pd:"08-12/2026生產",m:"M2 Coupe Edition 10 Jahre Taiwan",p:3880000,f:"--",ins:0,mnt:0,ext:0},
+  {y:"26/27",pd:"08-12/2026生產",m:"M2 Coupe Limited Edition 10 Jahre Taiwan",p:4500000,f:"--",ins:0,mnt:0,ext:0},
+  {y:"正2026",pd:"01-07/2026生產",m:"M2 Coupe",p:3750000,f:"--",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"M3 Competition M xDrive",p:6200000,f:"80/48",ins:0,mnt:0,ext:0},
-  {y:"24/25",pd:"07-12/2024生產",m:"M3 Competition M xDrive",p:6180000,f:"100/48",ins:1,mnt:1,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"M3 Competition Touring M xDrive",p:6280000,f:"80/48",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"07-12/2025生產",m:"M3 Competition Touring M xDrive",p:6280000,f:"80/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"M4 Competition M xDrive",p:6250000,f:"80/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"M5 Sedan",p:7660000,f:"80/48",ins:0,mnt:0,ext:0},
-  {y:"25/26",pd:"07-10/2025生產",m:"M5 Sedan",p:7660000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"M5 Touring",p:7780000,f:"80/48",ins:0,mnt:0,ext:0},
   {y:"正2025",pd:"01-06/2025生產",m:"X6 M Competition",p:7600000,f:"80/48",ins:0,mnt:1,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"iX xDrive45 Excellence",p:3380000,f:"120/48",ins:0,mnt:0,ext:0},
   {y:"正2026",pd:"01-06/2026生產",m:"iX xDrive45 M Sport",p:3680000,f:"120/48",ins:0,mnt:0,ext:0},
-  {y:"正2026",pd:"01-06/2026生產",m:"iX xDrive60 M Sport",p:4880000,f:"120/48",ins:0,mnt:0,ext:0}
+  {y:"正2026",pd:"01-06/2026生產",m:"iX xDrive60 M Sport",p:4880000,f:"120/48",ins:0,mnt:0,ext:0},
+  // NA5 iX3 預售
+  {y:"預售",pd:"07-12/2026生產",m:"iX3 40 M Sport",p:2800000,f:"--",ins:0,mnt:0,ext:0},
+  {y:"預售",pd:"07-12/2026生產",m:"iX3 50 xDrive M Sport",p:3250000,f:"--",ins:0,mnt:0,ext:0}
 ];
 var curY = "正2026";
 document.getElementById('ytabs').addEventListener('click', function(e) {
@@ -312,9 +347,11 @@ function render() {
     var finText=r.f==='--'?'--':r.f.replace(/(\d+)\/(\d+)/,'$1萬/$2期');
     var hasGift=r.ins||r.mnt||r.ext;
     var giftLabel=hasGift?'🎁 贈送項目':'尚無贈送項目';
+    var ypClass = r.y === '預售' ? ' style="background:rgba(230,92,0,0.1);color:#e65c00"' : '';
+    var pdLabel = r.y === '預售' ? '<span class="presale-badge">預售</span>' : '';
     tr.innerHTML=
-      '<td><span class="yp">'+r.y+'</span><span class="prod">('+r.pd+')</span></td>'+
-      '<td><div class="car-name">'+r.m+'</div><div class="car-price">NT$'+r.p.toLocaleString()+'</div></td>'+
+      '<td><span class="yp"'+ypClass+'>'+r.y+'</span><span class="prod">('+r.pd+')</span></td>'+
+      '<td><div class="car-name">'+pdLabel+r.m+'</div><div class="car-price">NT$'+r.p.toLocaleString()+(r.y==='預售'?' <span style="font-size:10px;color:#e65c00">參考售價</span>':'')+'</div></td>'+
       '<td class="fin">'+finText+'</td>'+
       '<td class="center"><button class="gift-btn'+(hasGift?'':' no-gift')+'"'+(hasGift?' onclick="showGift('+r.ins+','+r.mnt+','+r.ext+',\''+r.m.replace(/'/g,"\\'")+' ('+r.y+')\',\''+finText+'\')"':'')+'>'+giftLabel+'</button></td>';
     tbody.appendChild(tr);

@@ -122,10 +122,10 @@
   <div class="filter-group">
     <div class="filter-label">年式</div>
     <div class="tabs" id="ytabs">
-      <button class="tab" data-y="">全部</button>
+      <button class="tab active-y" data-y="">全部</button>
       <button class="tab tab-presale" data-y="預售">🔖 預售 iX3</button>
       <button class="tab" data-y="26/27">26/27</button>
-      <button class="tab active-y" data-y="正2026">正2026</button>
+      <button class="tab" data-y="正2026">正2026</button>
       <button class="tab" data-y="25/26">25/26</button>
       <button class="tab" data-y="正2025">正2025</button>
     </div>
@@ -311,7 +311,7 @@ var data = [
   {y:"預售",pd:"07-12/2026生產",m:"iX3 40 M Sport",p:2800000,f:"--",ins:0,mnt:0,ext:0},
   {y:"預售",pd:"07-12/2026生產",m:"iX3 50 xDrive M Sport",p:3250000,f:"--",ins:0,mnt:0,ext:0}
 ];
-var curY = "正2026";
+var curY = "";
 document.getElementById('ytabs').addEventListener('click', function(e) {
   if (!e.target.classList.contains('tab')) return;
   document.querySelectorAll('#ytabs .tab').forEach(function(t){t.classList.remove('active-y')});
